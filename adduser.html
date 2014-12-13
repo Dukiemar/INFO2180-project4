@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+	<head>
+		<title>Administrator</title>
+		<script type="text/javascript">
+		
+				function checkForm(){
+					var id=document.getElementById("id").value;
+        			var Fname=document.getElementById("fname").value;
+        			var Lname=document.getElementById("lname").value;
+        			var Uname=document.getElementById("uname").value;
+        			var pass=document.getElementById("pword").value;
+        			
+        			if (id==="") 
+                {
+                        document.getElementById("id").style.background="red";
+                        alert("Field cannot be blank,please enter id");
+                        return false;
+                }
+        else if(Fname==="")
+                {
+                        document.getElementById("fname").style.background="red";
+                        alert("Please insert first name");
+                        return false;
+                }
+        else if(Lname==="")
+                {
+                        document.getElementById("lname").style.background="red";
+                        alert("Please insert last name");
+                        return false;
+                }
+        else if(Uname==="")
+                {
+                        document.getElementById("uname").style.background="red";
+                        alert("Please insert a username");
+                        return false;
+                }
+        else if(pass==="")
+                {
+                        document.getElementById("pass").style.background="red";
+                        alert("Password invalid");
+                        return false;
+                }
+      
+        else 
+                {
+                        return true;
+                };
+        };
+        		
+
+		</script>
+	</head>
+<body>
+        	
+        		<form name="addUser" method="POST" id="adduser" action="register_user.php"  onsubmit="return checkForm()">
+        		id:<input type="text" name="frame" id="id" required><br/>
+        		first name:<input type="text" name="fname" id="fname" required><br/>
+        		last name:<input type="text" name="lname" id="lname" required><br/>
+        		user name:<input type="text" name="username" id="uname" required><br/>
+        		password:<input type="password" name="password" id="pword" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$" title="passwords should be 8 digits long and contain atleast one number one letter and a capitical letter"></p>	
+        		<input id="sub" type="submit" value="Submit" onclick=" return checkForm()" /></form>
+        		
+			<p><a href="logout.php"><button>Log Out</button></a></p>
+
+        </body>
+        </html>
