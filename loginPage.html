@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+				function completeForm(){
+					var uname=document.getElementById("uname").value;
+        			var pword=document.getElementById("pword").value;
+        	
+        			
+        			if (uname==="") 
+                {
+                        document.getElementById("uname").style.background="red";
+                        alert("Field cannot be blank");
+                        return false;
+                }
+        else if(pword==="")
+                {
+                        document.getElementById("pword").style.background="red";
+                        alert("Field cannot be blank");
+                        return false;
+                }
+        else 
+                {
+                        return true;
+                };
+        };
+        		
+	</script>
+</head>
+<body>
+	<div>
+		<h1 id="title"> User login</h1>
+	</div>
+	<form action="login.php" method="post" onsubmit="return completeForm()">
+		username: <input type="text" name="username" id="uname"><br>
+		password: <input type="password" name="password" id="pword"><br>
+		<input id="sub" type="submit" value="Login" onclick=" return completeForm()" />
+	</form>
+</body>
+</html>
